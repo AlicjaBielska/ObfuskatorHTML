@@ -6,12 +6,9 @@
         xmlns:local="clr-namespace:ObfuskatorUI"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="24,72,0,0" Text="Insert the text to obfuscate" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="TextBox_TextChanged" Height="24" Background="{x:Null}" FontWeight="Bold" FontStyle="Normal" BorderBrush="White" FontSize="18"/>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="250" Margin="24,103,0,0" VerticalAlignment="Top" Width="317"/>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="250" Margin="438,103,0,0" VerticalAlignment="Top" Width="317"/>
-        <TextBox HorizontalAlignment="Left" Margin="438,72,0,0" Text="Obfuscated output" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="TextBox_TextChanged" Height="24" FontWeight="Bold" BorderBrush="White" FontSize="18"/>
-        <Button Content="Obfuscate" HorizontalAlignment="Left" Margin="259,368,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81" Background="#FFDDDDDD">
+    <Grid RenderTransformOrigin="0.5,0.509">
+        <TextBox HorizontalAlignment="Left" Margin="36,103,0,0" Text="Insert the text to obfuscate" TextWrapping="Wrap" VerticalAlignment="Top" Width="323" TextChanged="TextBox_TextChanged" Height="250" Background="{x:Null}" FontWeight="Normal" FontStyle="Normal" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+        <Button Content="Obfuscate" HorizontalAlignment="Left" Margin="177,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81" Background="#FFDDDDDD">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,7 +18,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Clear text" HorizontalAlignment="Left" Margin="165,368,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81">
+        <Button Content="Clear text" HorizontalAlignment="Left" Margin="84,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,44 +28,20 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Grid>
-            <TextBox HorizontalAlignment="Left" Margin="24,72,0,0" Text="Insert the text" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="TextBox_TextChanged" Height="24" Background="White" FontWeight="Bold" FontStyle="Normal" BorderBrush="White" FontSize="18"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="250" Margin="24,103,0,0" VerticalAlignment="Top" Width="317"/>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="250" Margin="438,103,0,0" VerticalAlignment="Top" Width="317"/>
-            <TextBox HorizontalAlignment="Left" Margin="438,72,0,0" Text="Output" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="TextBox_TextChanged" Height="24" FontWeight="Bold" BorderBrush="White" FontSize="18"/>
-            <Button Content="Deobfuscate" HorizontalAlignment="Left" Margin="259,368,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81" Background="#FFDDDDDD" Click="Button_Click_1">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.176"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-            <Button Content="Obfuscate" HorizontalAlignment="Left" Margin="165,368,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81" Click="Button_Click">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.176"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-            <TextBox HorizontalAlignment="Center" Margin="0,10,0,0" Text="HTML OBFUSCATOR" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" TextChanged="TextBox_TextChanged" Height="46" Background="{x:Null}" FontWeight="Bold" FontStyle="Normal" BorderBrush="White" FontSize="24" Foreground="#FF0015FF"/>
-            <Button Content="Clear text" HorizontalAlignment="Left" Margin="72,368,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.176"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-
-        </Grid>
+        <Label Content="Insert text" HorizontalAlignment="Left" Margin="36,56,0,0" VerticalAlignment="Top" Height="36" Width="323" FontSize="18" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="422,103,0,0" Text="Insert the text to obfuscate" TextWrapping="Wrap" VerticalAlignment="Top" Width="323" TextChanged="TextBox_TextChanged" Height="250" Background="{x:Null}" FontWeight="Normal" FontStyle="Normal" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+        <Label Content="Output" HorizontalAlignment="Left" Margin="422,56,0,0" VerticalAlignment="Top" Height="36" Width="323" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Deobfuscate" HorizontalAlignment="Left" Margin="271,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="31" Width="81" Click="Button_Click_2">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.176"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label Content="HTML Obfuscate" HorizontalAlignment="Left" Height="46" Margin="297,10,0,0" VerticalAlignment="Top" Width="168" FontSize="20" FontWeight="Bold" Foreground="#FF4532C0"/>
 
     </Grid>
 </Window>
