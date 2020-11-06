@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obfuscator</title>
+    <script src="obfuscator.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="obfuscator.css">
+</head>
+<body>
+    <div class="container-fluid h-100 d-flex flex-column">
+        <div class="row m-2">
+            <div class="col">
+                <h1>HTML Obfuscator</h1>
+            </div>
+        </div>
+        <div class="row align-items-center flex-grow-1 m-2">
+            <div class="col h-100 d-flex flex-column">
+                <label for="to-obfuscate">Input:</label>
+                <textarea class="form-control flex-grow-1" id="to-obfuscate"></textarea>
+            </div>
+
+            <div class="col-auto">
+                <button type="button" class="btn btn-primary" onclick="obfuscateAndDisplay()">Obfuscate!</button>
+                <button type="button" class="btn btn-primary" onclick="deobfuscateAndDisplay()">Deobfuscate!</button>
+            </div>
+
+            <div class="col h-100 d-flex flex-column">
+                <label for="obfuscated">Output:</label>
+                <textarea class="form-control flex-grow-1" id="obfuscated"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
