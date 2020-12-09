@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Obfuscator</title>
     <script src="obfuscator.js"></script>
+    <script src="randomContentObfuscator.js"></script>
+    <script src="randomClassNamesObfuscator.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="obfuscator.css">
 </head>
@@ -21,8 +23,19 @@
             </div>
 
             <div class="col-auto">
-                <button type="button" class="btn btn-primary" onclick="obfuscateAndDisplay()">Obfuscate!</button>
-                <button type="button" class="btn btn-primary" onclick="deobfuscateAndDisplay()">Deobfuscate!</button>
+                <div>
+                    <button type="button" class="btn btn-primary mb-5" style="width:100%" onclick="switchRoles()"><--</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" onclick="obfuscateAndDisplay()">Obfuscate!</button>
+                    <button type="button" class="btn btn-primary" onclick="deobfuscateAndDisplay()">Deobfuscate!</button>
+                </div>
+                <div class="mt-1">
+                    <button type="button" class="btn btn-primary" onclick="obfuscateByRandomElements()">Obfuscate by random</button>
+                </div>
+                <div class="mt-1">
+                    <button type="button" class="btn btn-primary" onclick="obfuscateByRandomClasses()">Obfuscate by random classes</button>
+                </div>
             </div>
 
             <div class="col h-100 d-flex flex-column">

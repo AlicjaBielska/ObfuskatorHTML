@@ -26,12 +26,21 @@ const deobfuscate = (htmlString) => {
 const obfuscateAndDisplay = () => {
     const htmlString = document.getElementById('to-obfuscate').value;
     const output = document.getElementById('obfuscated');
-    output.innerText = obfuscate(htmlString);
+    output.value = obfuscate(htmlString);
 };
 
 const deobfuscateAndDisplay = () => {
     const htmlString = document.getElementById('to-obfuscate').value;
     const output = document.getElementById('obfuscated');
-    output.innerText = deobfuscate(htmlString);
+    output.value = deobfuscate(htmlString);
 };
+
+
+
+const switchRoles = () => {
+    const output = document.getElementById('obfuscated');
+    document.getElementById('to-obfuscate').value = output.value;
+    output.value = '';
+};
+
 
