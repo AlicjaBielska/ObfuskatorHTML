@@ -35,8 +35,6 @@ const deobfuscateAndDisplay = () => {
     output.value = deobfuscate(htmlString);
 };
 
-
-
 const switchRoles = () => {
     const output = document.getElementById('obfuscated');
     document.getElementById('to-obfuscate').value = output.value;

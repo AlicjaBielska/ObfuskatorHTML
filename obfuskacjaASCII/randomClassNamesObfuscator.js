@@ -56,3 +56,26 @@ function generateString(length) {
    }
    return ` ${result} `;
 }
+
+const deobfuscateRandomClasses = () => {
+    let htmlString = document.getElementById('to-obfuscate').value;
+    let domParser = new DOMParser();
+    let dom = domParser.parseFromString(htmlString, "text/html");
+    checkAndRemoveClasses(dom.documentElement);
+
+    const output = document.getElementById('obfuscated');
+    output.value = dom.documentElement.outerHTML;
+};
+
+const checkAndRemoveClasses = (element) => {
+    if(element.children) {
+        Array.from(element.children).forEach(child => checkAndRemoveClasses(child));
+        classesToUse.forEach(className => {
+            if(element.classList.contains(className)) removeClasses(element, className);
+        })
+    }
+};
+
+const removeClasses = (element, className) => {
+    element.classList.remove(className);
+};

@@ -35,3 +35,24 @@ function generateString(length) {
    return result;
 }
 
+
+const deobfuscateRandomContent = () => {
+    let htmlString = document.getElementById('to-obfuscate').value;
+    let domParser = new DOMParser();
+    let dom = domParser.parseFromString(htmlString, "text/html");
+    checkAndRemoveContent(dom.documentElement);
+
+    const output = document.getElementById('obfuscated');
+    output.value = dom.documentElement.outerHTML;
+};
+
+const checkAndRemoveContent = (element) => {
+    if(element.children) {
+        Array.from(element.children).forEach(child => checkAndRemoveContent(child));
+        if(element.classList.contains("boski-obfuscator")) removeContent(element);
+    }
+};
+
+const removeContent = (element) => {
+    element.parentNode.removeChild(element);
+};
