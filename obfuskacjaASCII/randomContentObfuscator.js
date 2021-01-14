@@ -1,4 +1,4 @@
-const skipTags = ['head', 'button'];
+const skipTags = ['head', 'button', 'html'];
 
 const obfuscateByRandomElements = () => {
     let htmlString = document.getElementById('to-obfuscate').value;
@@ -12,17 +12,18 @@ const obfuscateByRandomElements = () => {
 };
 
 const obfuscateElement = (element, dom) => {
-    if (skipTags.includes(element.tagName)) return
     if(element.children) {
         Array.from(element.children).forEach(child => obfuscateElement(child, dom));
+        if (skipTags.includes(element.tagName)) return
         element.appendChild(generateRandomElement(dom));
     }
 };
 
 const generateRandomElement = (dom) => {
     const element = dom.createElement("div");
-    element.innerText = generateString(128);
-    element.className = generateString(128) + "boski-obfuscator " + generateString(128);
+    const length = CONTENT_LENGTH;
+    element.innerText = generateString(length);
+    element.className = generateString(length) + "boski-obfuscator " + generateString(length);
     element.style = "display: none";
     return element;
 };
@@ -30,7 +31,7 @@ const generateRandomElement = (dom) => {
 
 function generateString(length) {
    let result           = '';
-   const characters       = 'ABCD EFGHIJKL MNOPQRSTUVW XYZa bcd efghijk lmnopqrst uvwxyz 0123456789';
+   const characters       = CHARACTERS_TO_USE;
    const  charactersLength = characters.length;
    for ( let i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));

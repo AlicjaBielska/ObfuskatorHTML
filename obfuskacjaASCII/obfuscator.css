@@ -29,3 +29,7 @@ html, body {
     justify-content: space-evenly;
     width: 70%;
 }
+
+.d-none {
+    display: none !important;
+}

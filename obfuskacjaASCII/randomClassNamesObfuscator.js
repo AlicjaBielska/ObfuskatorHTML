@@ -35,7 +35,7 @@ const addClassesToElement = (element) => {
 };
 
 const generateRandomClasses = (element) => {
-    element.className = selectRandomClasses(3) + element.className.split(' ').join(selectRandomClasses(3)) + selectRandomClasses(3);
+    element.className = selectRandomClasses(NO_CLASSES) + element.className.split(' ').join(selectRandomClasses(NO_CLASSES)) + selectRandomClasses(NO_CLASSES);
     return element;
 };
 
@@ -45,16 +45,6 @@ function selectRandomClasses(count) {
       result += classesToUse[Math.floor(Math.random() * classesToUse.length)] + ' ';
     }
     return ` ${result} `;
-}
-
-function generateString(length) {
-   let result           = '';
-   const characters       = 'ABCD E_FGH_IJKL MN-OPQ-RSTU_V-W -XYZa bcd efg_hijk lmnopq-r-st uvwxyz 01234_56789';
-   const  charactersLength = characters.length;
-   for ( let i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return ` ${result} `;
 }
 
 const deobfuscateRandomClasses = () => {

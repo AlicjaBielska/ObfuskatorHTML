@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Obfuscator</title>
+    <script src="settings.js"></script>
     <script src="obfuscator.js"></script>
     <script src="randomContentObfuscator.js"></script>
     <script src="randomClassNamesObfuscator.js"></script>
@@ -11,7 +12,16 @@
     <link rel="stylesheet" href="obfuscator.css">
 </head>
 <body>
-    <div class="container-fluid h-100 d-flex flex-column">
+    <div style="position:fixed; top: 10px; right: 10px; z-index: 200">
+        <div>
+            <nav>
+                <a href="#" onclick="goHome()"> Main </a>
+                <a href='#' onclick="goToSettings()"> Settings </a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid h-100 d-flex flex-column" id="main">
         <div class="row m-2">
             <div class="col">
                 <h1>HTML Obfuscator</h1>
@@ -59,6 +69,55 @@
             <div class="col h-100 d-flex flex-column">
                 <label for="obfuscated">Output:</label>
                 <textarea class="form-control flex-grow-1" id="obfuscated"></textarea>
+            </div>
+        </div>
+    </div>
+    <div id="settings" class="d-none">
+        <div class="row m-2">
+            <div class="col">
+                <h1> Settings </h1>
+            </div></div>
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col">
+                    <h4>HOTDOL</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="hot-layers">Number of layers:</label>
+                    <input class="form-control" id="hot-layers" type="number" value="5" oninput="setLayers(value)"/>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <h4>Random content obfuscator</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="characters">Characters to create random content:</label>
+                    <input class="form-control" id="characters" type="text" oninput="setCharacters(value)"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="content-length">Random content length:</label>
+                    <input class="form-control" id="content-length" type="number" oninput="setContentLength(value)"/>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <h4>Random content obfuscator</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="classes">Number of classes generated between originals:</label>
+                    <input class="form-control" id="classes" type="number" oninput="setClasses(value)"/>
+                </div>
             </div>
         </div>
     </div>
