@@ -1,3 +1,5 @@
+const skipTags = ['head', 'button'];
+
 const obfuscateByRandomElements = () => {
     let htmlString = document.getElementById('to-obfuscate').value;
 
@@ -10,6 +12,7 @@ const obfuscateByRandomElements = () => {
 };
 
 const obfuscateElement = (element, dom) => {
+    if (skipTags.includes(element.tagName)) return
     if(element.children) {
         Array.from(element.children).forEach(child => obfuscateElement(child, dom));
         element.appendChild(generateRandomElement(dom));
